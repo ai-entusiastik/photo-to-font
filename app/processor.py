@@ -64,7 +64,10 @@ def build_font(glyphs_svg: dict, font_name: str, output_path: str):
 
     cmap = {32: "space"}
     for c in glyphs_svg.keys():
-        cmap[ord(c)] = f"uni{ord(c):04X}"
+        g_name = f"uni{ord(c):04X}"
+        cmap[ord(c)] = g_name
+        if c.isalpha():
+            cmap[ord(c.lower())] = g_name
     fb.setupCharacterMap(cmap)
 
     glyphs = {}
