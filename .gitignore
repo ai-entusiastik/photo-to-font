@@ -1,2 +1,8 @@
-
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+static/template.png
+template.png
 bin/*.exe
